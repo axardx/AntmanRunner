@@ -15,8 +15,8 @@ public:
     
     void Fly( ) {
         //JumpBy::create(<#float duration#>, <#const cocos2d::Vec2 &position#>, <#float height#>, <#int jumps#>)
-        auto birdJumpAction = cocos2d::JumpBy::create(3,cocos2d::ccp(50,1),100,1);
-        flappyBird->runAction(birdJumpAction);
+		isFalling = true;
+		yspeed = 3;
     }
     
     void StopFlying( ) { isFalling = true; }
@@ -30,6 +30,8 @@ private:
     cocos2d::Vec2 origin;
     
     cocos2d::Sprite *flappyBird;
+
+	float yspeed;
     
     bool isFalling;
     

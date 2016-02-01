@@ -50,13 +50,13 @@ void Ground::createGround( cocos2d::Layer *layer )
     layer->addChild(ground2);
     layer->addChild(ground3);
     
-    auto groundAction1 = MoveBy::create( GROUND_MOVEMENT_SPEED * visibleSize.width, Point( -ground1->getContentSize().width, 0 ) );
+    /*auto groundAction1 = MoveBy::create( GROUND_MOVEMENT_SPEED * visibleSize.width, Point( -ground1->getContentSize().width, 0 ) );
     auto groundAction2 = MoveBy::create( GROUND_MOVEMENT_SPEED * visibleSize.width*2, Point( -ground1->getContentSize().width * 2, 0 ) );
     auto groundAction3 = MoveBy::create( GROUND_MOVEMENT_SPEED * visibleSize.width*3, Point( -ground1->getContentSize().width * 3, 0 ) );
     
     ground1->runAction( groundAction1);
     ground2->runAction( groundAction2);
-    ground3->runAction( groundAction3);
+    ground3->runAction( groundAction3);*/
     
     
 }
@@ -94,7 +94,7 @@ void  Ground::SpawnGround( cocos2d::Layer *layer )
     
 
     
-	/*if (ground1->getPositionX() <= origin.x - ground1->getContentSize().width * 0.5)
+	if (ground1->getPositionX() <= origin.x - ground1->getContentSize().width * 0.5)
 		ground1->setPosition(Point(ground1->getContentSize().width * 2.5 - GROUND_SPEED, origin.y + 10));
 	else
 		ground1->setPosition(Point(ground1->getPositionX() - GROUND_SPEED, origin.y + 10));
@@ -108,10 +108,9 @@ void  Ground::SpawnGround( cocos2d::Layer *layer )
 		ground3->setPosition(Point(ground1->getContentSize().width * 2.5 - GROUND_SPEED, origin.y + 10));
 	else
 		ground3->setPosition(Point(ground3->getPositionX() - GROUND_SPEED, origin.y + 10));
-		*/
 
 	//                                      0.17
-	if (ground1->getPositionX() <= origin.x - ground1->getContentSize().width * 0.5) {
+	/*if (ground1->getPositionX() <= origin.x - ground1->getContentSize().width * 0.5) {
 		ground1->setPosition(Point(ground1->getContentSize().width * 2.5, origin.y + 10));
 		auto groundAction = MoveBy::create(GROUND_MOVEMENT_SPEED * visibleSize.width * 3, Point(-ground1->getContentSize().width * 3, 0));
 		ground1->runAction(groundAction);
@@ -125,7 +124,7 @@ void  Ground::SpawnGround( cocos2d::Layer *layer )
         ground3->setPosition( Point( ground1->getContentSize().width * 2.5 , origin.y+10 ) );
         auto groundAction = MoveBy::create( GROUND_MOVEMENT_SPEED * visibleSize.width*3, Point( -ground1->getContentSize().width * 3, 0 ) );
         ground3->runAction( groundAction);
-    }
+    }*/
     
 /*
     // set collision

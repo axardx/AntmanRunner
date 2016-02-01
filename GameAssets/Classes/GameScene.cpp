@@ -141,7 +141,7 @@ bool GameScene::onContactBegin( cocos2d::PhysicsContact &contact )
         
         
         // if ( jump > 0 )
-            //bird->UpOffset();
+            bird->UpOffset();
         
         jump = 0;
         

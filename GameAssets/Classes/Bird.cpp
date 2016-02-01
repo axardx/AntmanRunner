@@ -26,29 +26,34 @@ Bird::Bird( cocos2d::Layer *layer ) {
     layer->addChild( flappyBird, 100);
     
     big = true;
+
+	yspeed = 0;
     
     isFalling = true;
 }
 
 void Bird::Fall()
 {
-    if ( true == isFalling ) {
-        flappyBird->setPositionX( visibleSize.width/2 + origin.x );
-        
-        flappyBird->setPositionY( flappyBird->getPositionY() - ( BIRD_FALLING_SPEED*visibleSize.height ) );
+	if (true == isFalling) {
+		flappyBird->setPositionX(visibleSize.width / 2 + origin.x);
+
+		flappyBird->setPositionY(flappyBird->getPositionY() + yspeed);
+		yspeed = yspeed - BIRD_FALLING_ACC;
+	}
         
   /*
         // if stcuk into the ground when falling down
         if ( flappyBird->getPositionY() < 60 )
             flappyBird->setPositionY( 60 );
    */
-    }
     
-    else {
+    
+    /*else {
         flappyBird->setPositionX( visibleSize.width/2 + origin.x );
         //flappyBird->setPositionY( flappyBird->getPositionY() + ( BIRD_FALLING_SPEED*visibleSize.height ) );
         flappyBird->setPositionY( flappyBird->getPositionY() + ( 0.01*visibleSize.height ) );
-    }
+		yspeed = 0;
+    }*/
 }
 
 void Bird::Shrink_Magnify( cocos2d::Layer *layer )
@@ -85,8 +90,11 @@ void Bird::Shrink_Magnify( cocos2d::Layer *layer )
 void Bird::UpOffset()
 {
     // if stcuk into the ground when falling down
-    flappyBird->setPositionY( flappyBird->getPositionY() + 10 );
-    
+   // flappyBird->setPositionY( flappyBird->getPositionY() + 10 );
+	isFalling = false;
+	//flappyBird->setPositionX(visibleSize.width / 2 + origin.x);
+	//flappyBird->setPositionY(flappyBird->getPositionY() + (0.01*visibleSize.height));
+	yspeed = 0;
 }
 
 
